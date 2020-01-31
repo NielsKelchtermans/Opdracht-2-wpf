@@ -17,7 +17,8 @@
         <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical" Width="270" 
                     HorizontalAlignment="Left"
-                    Margin="0 20 ">
+                    Margin="0 20 "
+                    Name="RadioCheckPanel">
             <RadioButton Content="small"
                          Name="small"
                          GroupName="grootte"
@@ -59,7 +60,7 @@
                          
         </StackPanel>
         <StackPanel Orientation="Vertical" Width="210"
-                    HorizontalAlignment="Right" >
+                    HorizontalAlignment="Right" Name="extraHoeveelheidPanel" >
                 <ToggleButton Content="extra dikke korst"
                     BorderBrush="Black"
                     BorderThickness="1"
@@ -82,9 +83,11 @@
                             Content="-"></Button>
                     </StackPanel>
                 </StackPanel>
-                <Button Name="bestellen" Margin="70 10">
+                <Button Name="bestellen" 
+                        Margin="70 10"
+                        Click="bestellen_Click">
                     <StackPanel Orientation="Vertical" Margin="5">
-                        <Image Source="pack://application:,,,,/images/pizza.jpg">
+                        <Image Source="/images/pizza.jpg">
                         </Image>
                         <TextBlock Text="BESTELLEN"></TextBlock>
                     </StackPanel>
@@ -92,7 +95,7 @@
             </StackPanel>
             
         </StackPanel>
-        <Label Content="U heeft k;askdfj;alksjf;alkjf;lsaakjldsafs"
+        <Label 
                Name="opsomming"></Label>
     </StackPanel>
 

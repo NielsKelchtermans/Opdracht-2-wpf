@@ -24,5 +24,34 @@ namespace PizzaBestellen
         {
             InitializeComponent();
         }
+
+        private void bestellen_Click(object sender, RoutedEventArgs e)
+        {
+            string hoeveelheid = "";
+            string grootte = "";
+            string toppings = "";
+
+            foreach (FrameworkElement kind in RadioCheckPanel.Children)
+            {
+                if (kind is RadioButton r)
+                {
+                    if (r.IsChecked==true)
+                    {
+                        grootte = r.Name.ToString();
+                    }
+                }
+                if (kind is CheckBox c)
+                {
+                    if (c.IsChecked==true && c.Name.ToString()!="tomaat" && c.Name.ToString()!="kaas")
+                    {
+                        toppings += c.Name.ToString() + " ";
+
+                    }
+                }
+            }
+
+            //U heeft 3 medium pizza('s) besteld met: tomaat, kaas en ananas overstrooid met kaas.
+            opsomming.Content = "U heeft " + grootte + toppings;
+        }
     }
 }
